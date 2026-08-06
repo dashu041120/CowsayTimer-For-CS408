@@ -1,0 +1,15 @@
+# Binaries
+stopwatch
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test & Debug
+*.test
+*.out
+
+# Temporary / Scratch
+scratch/
+*.cast
