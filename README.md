@@ -10,9 +10,6 @@
 
 [![asciicast](https://asciinema.org/a/x3dbiwzYoycYM38E.svg)](https://asciinema.org/a/x3dbiwzYoycYM38E)
 
-<script src="https://asciinema.org/a/LvEzWfKijPYyDKjz.js" id="asciicast-LvEzWfKijPYyDKjz" async></script>
-<script src="https://asciinema.org/a/x3dbiwzYoycYM38E.js" id="asciicast-x3dbiwzYoycYM38E" async></script>
-
 ---
 
 ## ✨ 特性
