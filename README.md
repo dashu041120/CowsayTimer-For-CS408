@@ -6,9 +6,10 @@
 
 ## 🎬 演示 (Demo)
 
-[![asciicast](https://asciinema.org/a/LvEzWfKijPYyDKjz.svg)](https://asciinema.org/a/LvEzWfKijPYyDKjz)
-
-[![asciicast](https://asciinema.org/a/x3dbiwzYoycYM38E.svg)](https://asciinema.org/a/x3dbiwzYoycYM38E)
+| 横屏模式 (Landscape) | 竖屏/窄屏模式 (Portrait) |
+| :---: | :---: |
+| ![Landscape Demo](assets/demo.gif) | ![Portrait Demo](assets/demo2.gif) |
+| [下载 `demo.cast`](assets/demo.cast) | [下载 `demo2.cast`](assets/demo2.cast) |
 
 ---
 
