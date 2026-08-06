@@ -37,6 +37,19 @@ go build -o stopwatch main.go
 ./stopwatch [tasks.md]
 ```
 
+### 📦 单文件跨平台编译
+
+```bash
+# 打包 Linux 64 位单文件
+GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o stopwatch-linux main.go
+
+# 打包 macOS (Apple Silicon M1/M2/M3) 单文件
+GOOS=darwin GOARCH=arm64 go build -ldflags="-s -w" -o stopwatch-macos-arm64 main.go
+
+# 打包 Windows 64 位单文件 (.exe)
+GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o stopwatch.exe main.go
+```
+
 ---
 
 ## ⌨️ 快捷键
