@@ -1,0 +1,47 @@
+name: Build & Release Single Binaries
+
+on:
+  push:
+    tags:
+      - '*'
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build & Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Build Cross-Platform Binaries
+        run: |
+          mkdir -p build
+          # Linux 64-bit
+          GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o build/stopwatch-linux-amd64 main.go
+          # macOS Intel
+          GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o build/stopwatch-darwin-amd64 main.go
+          # macOS Apple Silicon (M1/M2/M3)
+          GOOS=darwin GOARCH=arm64 go build -ldflags="-s -w" -o build/stopwatch-darwin-arm64 main.go
+          # Windows 64-bit (.exe)
+          GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o build/stopwatch-windows-amd64.exe main.go
+
+      - name: Create Release & Upload Assets
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/*
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
